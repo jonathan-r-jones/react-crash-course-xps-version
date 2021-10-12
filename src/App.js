@@ -30,7 +30,7 @@ const App = () => {
     <div className="container">
       <Header />
       <Tasks tasks={tasks} />
-      <h2>Hello {name}</h2>
+      <h2>Hello qq3 {name}</h2>
       <h2>Hello {x ? 'Yes' : 'No'}</h2>
     </div>
       );
