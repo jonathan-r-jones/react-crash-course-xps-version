@@ -26,10 +26,15 @@ const App = () => {
 
   const name = 'Brad'
   const x = false
+
+  // Delete Task
+  const deleteTask = (id) => {
+    console.log('delete', id)
+  }
   return (
     <div className="container">
       <Header />
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} onDelete={deleteTask} />
       <h2>Hello qq3 {name}</h2>
       <h2>Hello {x ? 'Yes' : 'No'}</h2>
     </div>
