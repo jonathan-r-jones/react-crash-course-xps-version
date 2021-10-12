@@ -35,7 +35,9 @@ const App = () => {
   return (
     <div className="container">
       <Header />
+      {tasks.length > 0 ?( 
       <Tasks tasks={tasks} onDelete={deleteTask} />
+      ) : ( 'No Tasks to Show')}
       <h2>Hello qq3 {name}</h2>
       <h2>Hello {x ? 'Yes' : 'No'}</h2>
     </div>
