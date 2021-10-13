@@ -33,6 +33,8 @@ const App = () => {
     console.log(task)
     const id = Math.floor(Math.random() * 10000 + 1)
     console.log(id)
+    const newTask = {id, ...task}
+    setTasks([...tasks, newTask])
   }
 
   // Delete Task
@@ -41,7 +43,7 @@ const App = () => {
     setTasks(tasks.filter((task) => task.id !== id))
   }
 
-  // Toggle Reminder]
+  // Toggle Reminder
   const toggleReminder = (id) => {
     console.log(id)
     setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task))
