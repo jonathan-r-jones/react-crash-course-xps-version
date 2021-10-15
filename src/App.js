@@ -1,11 +1,26 @@
 import Header from './components/Header'
 import Tasks from './components/Tasks'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddTask from './components/AddTask'
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([])
+
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks()
+      setTasks(tasksFromServer)
+    }
+    getTasks()
+  }, [])
+
+  // Fetch Tasks
+  const fetchTasks = async () => {
+    const res = await fetch('http://localhost:5000/tasks')
+    const data = await res.json()
+    return data
+  }
 
   const name = 'Brad'
   const x = false
